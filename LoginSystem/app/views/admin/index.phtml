@@ -1,0 +1,40 @@
+<h1>Admin panel</h1>
+<?php echo $this->tag->linkTo(["admin/create", "Create", 'class' => 'btn btn-primary']);?>
+<?php
+echo '<h1>';
+echo $this->flashSession->output();
+echo '</h1>';
+?>
+<?php
+if ($users->count() > 0) {
+    ?>
+    <table class="table table-bordered table-hover">
+        <thead class="thead-light">
+        <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>role</th>
+            <th>Action</th>
+        </tr>
+        </thead>
+        <tfoot>
+        <tr>
+            <td colspan="3">Users quantity: <?php echo $users->count(); ?></td>
+        </tr>
+        </tfoot>
+        <tbody>
+        <?php foreach ($users as $user) { ?>
+            <tr>
+                <td><?php echo $user->id; ?></td>
+                <td><?php echo $user->name; ?></td>
+                <td><?php echo $user->email; ?></td>
+                <td><?php echo $user->role; ?></td>
+                <td><?php echo $this->tag->LinkTo(["admin/edit/". $user->id, "Edit", "class" => "btn btn-primary", 'title' => 'editSubmit']) ?>
+                    <?php echo $this->tag->LinkTo(["admin/delete/" . $user->id, "Delete", "class" => "btn btn-danger"]) ?></td>
+            </tr>
+        <?php } ?>
+        </tbody>
+    </table>
+    <?php
+}

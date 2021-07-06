@@ -1,0 +1,27 @@
+body {
+    background-color: whitesmoke;
+}
+
+.errorMessage {
+    color: white;
+    background-color: lightcoral;
+    text-align: center;
+    font-size: 15px;
+    width: 50%;
+}
+
+.successMessage {
+    color: green;
+    background-color: lightgreen;
+    text-align: center;
+    font-size: 15px;
+    width: 50%;
+}
+
+.warningMessage {
+    color: white;
+    background-color: darkgoldenrod;
+    text-align: center;
+    font-size: 15px;
+    width: 50%;
+}

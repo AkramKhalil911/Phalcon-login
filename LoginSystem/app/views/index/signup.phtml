@@ -1,0 +1,25 @@
+<h1>Sign up here</h1>
+
+<form method="post">
+    <div class="mb-3">
+        <label for="name" class="form-label">Name</label>
+        <?php echo $this->tag->textField(['name', "class" => "form-control"]) ?>
+    </div>
+    <div class="mb-3">
+        <label for="email" class="form-label">e-mail</label>
+        <?php echo $this->tag->textField(['email', "class" => "form-control"]) ?>
+    </div>
+    <div class="mb-3">
+        <label for="password" class="form-label">password</label>
+        <?php echo $this->tag->passwordField(['password', 'class' => 'password form-control']); ?>
+    </div>
+    <div class="mb-3">
+        <?php echo $this->tag->submitButton(["Signup", "class" => "btn btn-primary"]) ?>
+    </div>
+</form>
+
+<?php
+    echo '<h1>';
+    echo $this->flashSession->output();
+    echo '</h1>';
+?>
